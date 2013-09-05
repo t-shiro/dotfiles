@@ -32,6 +32,9 @@
 ;; スタートアップ画面非表示
 (setq inhibit-startup-screen t)
 
+;; シンボリックリンクを開く時の質問を表示しない
+(setq vc-follow-symlinks t)
+
 ;; 行番号表示
 (global-linum-mode t)
 (set-face-attribute 'linum nil
