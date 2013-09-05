@@ -5,6 +5,7 @@
 ;; load-path
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 (add-to-list 'load-path "~/.emacs.d/elpa/")
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/ess/")
 
 ;;Mac向けの言語設定
 (when (eq system-type 'darwin)
