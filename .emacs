@@ -126,6 +126,9 @@
 (global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 (setq skeleton-pair 1)
 
+;; SSH越しにファイルを編集出来る様にtrampの設定
+(require 'tramp)
+
 ;; 改行した時一緒にインデント
 (global-set-key "\C-m" 'newline-and-indent)
 
@@ -145,5 +148,8 @@
 (require 'ruby-block)
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle t)
+
+(require 'twittering-mode)
+(setq twittering-use-master-password t)
 
 
