@@ -1,4 +1,4 @@
-;;言語設定
+;; 言語設定
 (set-language-environment "Japanese")
 (prefer-coding-system 'utf-8)
 
@@ -7,13 +7,14 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/")
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/ess/")
 
-;;Mac向けの言語設定
+;; Mac向けの言語設定
 (when (eq system-type 'darwin)
     (require 'ucs-normalize)
         (set-file-name-coding-system 'utf-8-hfs)
-            (setq locale-coding-system 'utf-8-hfs))
+        (setq locale-coding-system 'utf-8-hfs)
+)
 
-
+;; ソースに色づけ
 (global-font-lock-mode t)
 
 ;; コメントの色をフックして変更してる
@@ -40,9 +41,9 @@
 (global-linum-mode t)
 (set-face-attribute 'linum nil
     :foreground "#66cdaa"
-        ;;"行番号枠の"背景色。
-            ;;:background "#ffff00"
-                :height 0.9)
+    ;;"行番号枠の"背景色。
+    ;;:background "#ffff00"
+    :height 0.9)
 
 (set-face-attribute 'mode-line-inactive nil
     :foreground "#ffff00"
@@ -63,15 +64,32 @@
 (set-face-background 'trailing-whitespace "#b14770")
 
 ;; インデント設定 タブをスペース4つに入れ替え
-(setq-default global-indent-tabs-mode nil)
-(setq-default global-tab-width 4)
-(setq-default global-indent-line-function 'insert-tab)
-
+;;(global-set-key (kbd "TAB") 'self-insert-command)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq default-tab-width 4)
+(setq-default global-indent-line-function 'tab-to-tab-stop)
+(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))
 ;; だいたいの言語のインデント設定はc-modeに依るらしいのでstroustrup(4スペース)にしてる
+
 (add-hook 'c-mode-common-hook
     (lambda()
-            (c-set-style "stroustrup")
+      (c-set-style "stroustrup")
                 ))
+
+;;Rubyのインデント設定
+(setq ruby-indent-level 4
+      ruby-indent-tabs-mode nil
+      )
+
+
+(add-hook 'text-mode-common-hook
+    (lambda()
+      (c-set-style "stroustrup")
+                ))
+
+;;タブやスペースを色付け / 要改良
+;;(global-whitespace-mode 1)
 
 ;; タイトルバーに開いてるファイル名を表示
 (setq frame-title-format "%f")
