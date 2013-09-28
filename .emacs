@@ -17,6 +17,7 @@
 ;; ソースに色づけ
 (global-font-lock-mode t)
 
+
 ;; コメントの色をフックして変更してる
 (add-hook 'font-lock-mode-hook
     '(lambda ()
@@ -39,6 +40,7 @@
 
 ;; 行番号表示
 (global-linum-mode t)
+
 (set-face-attribute 'linum nil
     :foreground "#66cdaa"
     ;;"行番号枠の"背景色。
@@ -111,7 +113,7 @@
 (setq show-paren-delay 0)
 (show-paren-mode t)
 (setq show-paren-style 'expression)
-(set-face-background 'show-paren-match-face "blue")
+(set-face-background 'show-paren-match-face "Orange")
 (set-face-foreground 'show-paren-match-face nil)
 (set-face-underline-p 'show-paren-match-face "yellow")
 
@@ -171,3 +173,18 @@
 (setq twittering-use-master-password t)
 
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-table ((t (:foreground "Green"))))
+'(org-link ((t (:foreground "Red"))))
+ )
