@@ -35,7 +35,7 @@ local p_mark="%(?,%F{green},%F{red})%(!,#,$)%f"
 if [ -n "${SSH_CLIENT}" ]; then
     PROMPT="%F{yellow}$p_info $p_mark %f"
 else
-    PROMPT="{yellow}$p_info $p_mark "
+    PROMPT="$p_info $p_mark "
 fi
 
 
