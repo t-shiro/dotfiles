@@ -8,7 +8,7 @@ if [ `uname` = "Darwin" ]; then
 
     export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/share/man:/usr/local/opt/coreutils/share/man:${MANPATH}"
-    
+
     #brewからの指示により、オンラインヘルプを使うため
     unalias run-help
     autoload run-help
@@ -32,8 +32,10 @@ alias ls='ls --color'
 
 local p_info="[ %n@%m ]"
 local p_mark="%(?,%F{green},%F{red})%(!,#,$)%f"
-if [ -n "${SSH_CLIENT}" ]; then
+if [ -n "${SSH_CONNECTION}" ]; then
     PROMPT="%F{yellow}$p_info $p_mark %f"
+elif [ `whoami` = "root" ]; then
+    PROMPT="%F{red}$p_info $p_mark %f"
 else
     PROMPT="$p_info $p_mark "
 fi
