@@ -32,10 +32,13 @@ alias ls='ls --color'
 
 local p_info="[ %n@%m ]"
 local p_mark="%(?,%F{green},%F{red})%(!,#,$)%f"
-if [ -n "${SSH_CONNECTION}" ]; then
-    PROMPT="%F{yellow}$p_info $p_mark %f"
-elif [ `whoami` = "root" ]; then
-    PROMPT="%F{red}$p_info $p_mark %f"
+if [ `tty | grep pts` ]; then
+    PROMPT="%K{cyan}$p_info%k"
+    if [ `whoami` = "root" ]; then
+        PROMPT="%F{red}${PROMPT}%f $p_mark "
+    else
+        PROMPT="%F{yellow}${PROMPT}%f $p_mark "
+    fi
 else
     PROMPT="$p_info $p_mark "
 fi
