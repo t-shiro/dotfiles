@@ -4,7 +4,7 @@ if [ `uname` = "Darwin" ]; then
     alias awk='gawk'
     alias grep='ggrep'
     alias find='gfind'
-    alias ls='ls --color'
+
 
     export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/share/man:/usr/local/opt/coreutils/share/man:${MANPATH}"
@@ -57,3 +57,4 @@ zstyle ':completion:*:default' menu select
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
 
+alias ls='ls --color'
