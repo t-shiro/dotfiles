@@ -37,7 +37,7 @@ if [ `tty | grep pts` ]; then
     if [ `whoami` = "root" ]; then
         PROMPT="%F{red}${PROMPT}%f $p_mark "
     else
-        PROMPT="%F{yellow}${PROMPT}%f $p_mark "
+        PROMPT="%F{black}${PROMPT}%f $p_mark "
     fi
 else
     PROMPT="$p_info $p_mark "
