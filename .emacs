@@ -122,6 +122,9 @@
 (set-face-foreground 'font-lock-string-face "LightSeaGreen")
 (set-face-foreground 'font-lock-function-name-face "Orange")
 
+;; M-Iでindent-region
+(global-set-key "\M-I" 'indent-region)
+
 ;; auto-install
 ;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install/"))
 ;;(require 'auto-install)
