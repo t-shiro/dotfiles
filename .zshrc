@@ -27,7 +27,7 @@ export LS_COLORS='rs=0:di=00;44:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 
 
 alias ls='ls --color'
-
+alias ll='ls -lah'
 #プロンプト設定 %(,,)はif...then...else、?は直前の終了ステータス、!はユーザーの権限のチェック
 local p_info="[ %n@%m ]"
 local p_mark="%(?,%F{green},%F{red})%(!,#,$)%f"
@@ -65,6 +65,7 @@ setopt correct
 setopt magic_equal_subst
 setopt prompt_subst
 setopt notify
+setopt nonomatch
 
 autoload colors
 
@@ -82,5 +83,4 @@ zstyle ':completion:*:default' menu select
 # セパレータを設定する
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
-
 

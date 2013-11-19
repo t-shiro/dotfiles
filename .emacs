@@ -9,10 +9,10 @@
 
 ;; Mac向けの言語設定
 (when (eq system-type 'darwin)
-    (require 'ucs-normalize)
-        (set-file-name-coding-system 'utf-8-hfs)
-        (setq locale-coding-system 'utf-8-hfs)
-)
+  (require 'ucs-normalize)
+  (set-file-name-coding-system 'utf-8-hfs)
+  (setq locale-coding-system 'utf-8-hfs)
+  )
 
 ;; ソースに色づけ
 (global-font-lock-mode t)
@@ -20,10 +20,10 @@
 
 ;; コメントの色をフックして変更してる
 (add-hook 'font-lock-mode-hook
-    '(lambda ()
-           (set-face-foreground 'font-lock-comment-face "#ffff00")
-               )
-               )
+          '(lambda ()
+             (set-face-foreground 'font-lock-comment-face "#ffff00")
+             )
+          )
 
 ;; package.elの拡張
 (require 'package)
@@ -42,14 +42,14 @@
 (global-linum-mode t)
 
 (set-face-attribute 'linum nil
-    :foreground "#66cdaa"
-    ;;"行番号枠の"背景色。
-    ;;:background "#ffff00"
-    :height 0.9)
+                    :foreground "#66cdaa"
+                    ;;"行番号枠の"背景色。
+                    ;;:background "#ffff00"
+                    :height 0.9)
 
 (set-face-attribute 'mode-line-inactive nil
-    :foreground "#ffff00"
-        )
+                    :foreground "#ffff00"
+                    )
 
 ;; 行番号の後ろに一つスペースを入れる
 (setq linum-format "%1d ");
@@ -69,15 +69,14 @@
 ;;(global-set-key (kbd "TAB") 'self-insert-command)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
-(setq default-tab-width 4)
 (setq-default global-indent-line-function 'tab-to-tab-stop)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))
 ;; だいたいの言語のインデント設定はc-modeに依るらしいのでstroustrup(4スペース)にしてる
 
 (add-hook 'c-mode-common-hook
-    (lambda()
-      (c-set-style "stroustrup")
-                ))
+          (lambda()
+            (c-set-style "stroustrup")
+            ))
 
 ;;Rubyのインデント設定
 (setq ruby-indent-level 4
@@ -86,9 +85,9 @@
 
 
 (add-hook 'text-mode-common-hook
-    (lambda()
-      (c-set-style "stroustrup")
-                ))
+          (lambda()
+            (c-set-style "stroustrup")
+            ))
 
 ;;タブやスペースを色付け / 要改良
 ;;(global-whitespace-mode 1)
@@ -140,7 +139,7 @@
 ;; R-mode
 (setq auto-mode-alist
       (cons (cons "\\.r$" 'R-mode) auto-mode-alist))
-      (autoload 'R-mode "ess-site" "Emacs Speaks Statistics mode" t)
+(autoload 'R-mode "ess-site" "Emacs Speaks Statistics mode" t)
 
 ;; 括弧の補完
 (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
@@ -164,9 +163,9 @@
 ;; Ruby用の補完
 (require 'ruby-electric)
 (add-hook 'ruby-mode-hook
-    '(lambda ()
-         (ruby-electric-mode t)))
-         (setq ruby-electric-expand-delimiters-list nil)
+          '(lambda ()
+             (ruby-electric-mode t)))
+(setq ruby-electric-expand-delimiters-list nil)
 
 (require 'ruby-block)
 (ruby-block-mode t)
@@ -189,5 +188,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-table ((t (:foreground "Green"))))
-'(org-link ((t (:foreground "Red"))))
+ '(org-link ((t (:foreground "Red"))))
  )
