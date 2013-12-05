@@ -190,3 +190,6 @@
  '(org-table ((t (:foreground "Green"))))
  '(org-link ((t (:foreground "Red"))))
  )
+
+;; C-hで一文字消去
+(keyboard-translate ?\C-h ?\C-?)
