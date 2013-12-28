@@ -193,3 +193,9 @@
 
 ;; C-hで一文字消去
 (keyboard-translate ?\C-h ?\C-?)
+
+;; C-zをtmuxで使うために殺す
+(global-set-key "\C-z" nil)
+
+;; 同上
+(global-set-key "\C-t" nil)

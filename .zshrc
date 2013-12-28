@@ -84,3 +84,10 @@ zstyle ':completion:*:default' menu select
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
 
+if [   -z $TMUX ]; then
+    if $(tmux has-session 2> /dev/null); then
+        tmux attach
+    else
+        tmux
+    fi
+fi
