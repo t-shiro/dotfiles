@@ -29,7 +29,7 @@ alias ll='ls -lah'
 #プロンプト設定 %(,,)はif...then...else、?は直前の終了ステータス、!はユーザーの権限のチェック
 local p_info="[ %n@%m ]"
 local p_mark="%(?,%F{green},%F{red})%(!,#,$)%f"
-if [ `tty | grep pts` ]; then
+if [ $SSH_CLIENT ]; then
     PROMPT="%K{cyan}$p_info%k"
     if [ `whoami` = "root" ]; then
         PROMPT="%F{red}${PROMPT}%f $p_mark "
@@ -82,10 +82,15 @@ zstyle ':completion:*:default' menu select
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
 
-if [   -z $TMUX ]; then
+# $TMUXが定義されていないならアタッチするかセッションを開始
+if [ ! $TMUX ]; then
     if $(tmux has-session 2> /dev/null); then
         tmux attach
     else
-        tmux
+        if [ $SSH_CLIENT ]; then
+            tmux -f ~/.tmux.conf.server
+        else
+            tmux -f ~/.tmux.conf.terminal
+        fi
     fi
 fi
