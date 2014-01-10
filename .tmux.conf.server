@@ -7,7 +7,7 @@ set -g status-utf8 on
 set -g status-interval 5
 set -g status-right-length 150
 #set -g status-right "#(date +"%Y/%m/%d") #(date +"%H:%M:%S")"
-if "test 'Darwin' = `uname`" "set -g status-left ' '"
+if "test 'Darwin' = `uname`" "set -g status-left '🍎 '"
 if "test 'Linux' = `uname`" "set -g status-left '🐧 '"
 set -g mode-mouse on
 unbind-key C-b
