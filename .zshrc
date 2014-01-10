@@ -4,6 +4,7 @@ if [ `uname` = "Darwin" ]; then
     alias awk='gawk'
     alias grep='ggrep'
     alias find='gfind'
+    alias xargs='gxargs'
 
 
     export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -15,9 +16,6 @@ if [ `uname` = "Darwin" ]; then
     HELPDIR=/usr/local/share/zsh/helpfiles
     export INCLUDE="/usr/local/Cellar/libelf/0.8.13/include/libelf:~/include"
 
-    # wine使うとき用
-    #export DYLD_FALLBACK_LIBRARY_PATH="/Users/romanov/wine/wine-1.7.0/lib:/opt/X11/lib:/usr/lib"
-    #export PATH="/Users/romanov/wine/wine-1.7.0/bin:${PATH}"
 fi
 
 export LANG='ja_JP.UTF-8'

@@ -191,11 +191,26 @@
  '(org-link ((t (:foreground "Red"))))
  )
 
+
 ;; C-hで一文字消去
 (keyboard-translate ?\C-h ?\C-?)
 
 ;; C-zをtmuxで使うために殺す
-(global-set-key "\C-z" nil)
+(global-set-key "\C-z" 'forward-word)
 
 ;; 同上
 (global-set-key "\C-t" nil)
+
+
+(global-set-key [f1] 'backward-word)
+(global-set-key [f2] 'forward-word)
+(global-set-key (kbd "C-]") 'backward-word)
+(global-set-key (kbd "C-\\") 'forward-word)
+
+
+;; 変更予定キー
+;; C-Space (Mark set) (C-2で代用)
+;; C-\ (変換切り替え) (C-4で代用)
+
+
+
