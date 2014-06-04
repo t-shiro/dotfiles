@@ -1,5 +1,7 @@
 ;; 言語設定
+(require 'mozc)
 (set-language-environment "Japanese")
+(setq default-input-method "japanese-mozc")
 (prefer-coding-system 'utf-8)
 
 ;; load-path
@@ -205,7 +207,6 @@
 (global-set-key [f1] 'backward-word)
 (global-set-key [f2] 'forward-word)
 (global-set-key (kbd "C-]") 'backward-word)
-(global-set-key (kbd "C-\\") 'forward-word)
 
 
 ;; 変更予定キー
