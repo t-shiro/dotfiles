@@ -1,7 +1,7 @@
 ;; 言語設定
-(require 'mozc)
+;;(require 'mozc)
 (set-language-environment "Japanese")
-(setq default-input-method "japanese-mozc")
+;;(setq default-input-method "japanese-mozc")
 (prefer-coding-system 'utf-8)
 
 ;; load-path
@@ -163,11 +163,11 @@
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; Ruby用の補完
-(require 'ruby-electric)
-(add-hook 'ruby-mode-hook
-          '(lambda ()
-             (ruby-electric-mode t)))
-(setq ruby-electric-expand-delimiters-list nil)
+;; (require 'ruby-electric)
+;; (add-hook 'ruby-mode-hook
+;;           '(lambda ()
+;;              (ruby-electric-mode t)))
+;; (setq ruby-electric-expand-delimiters-list nil)
 
 (require 'ruby-block)
 (ruby-block-mode t)
@@ -213,5 +213,6 @@
 ;; C-Space (Mark set) (C-2で代用)
 ;; C-\ (変換切り替え) (C-4で代用)
 
-
+;; nnで「ん」を出す為の設定
+(setq quail-japanese-use-double-n t)
 
