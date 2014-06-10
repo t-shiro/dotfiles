@@ -90,14 +90,16 @@ zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
 
 # $TMUXが定義されていないならアタッチするかセッションを開始
-if [ ! $TMUX ]; then
-    if $(tmux has-session 2> /dev/null); then
-        tmux attach
-    else
-        if [ $SSH_CLIENT ]; then
-            tmux -f ~/.tmux.conf.server
+if [ $(id -u) != 0 ]; then
+    if [ ! $TMUX ]; then
+        if $(tmux has-session 2> /dev/null); then
+            tmux attach
         else
-            tmux -f ~/.tmux.conf.terminal
+            if [ $SSH_CLIENT ]; then
+                tmux -f ~/.tmux.conf.server
+            else
+                tmux -f ~/.tmux.conf.terminal
+            fi
         fi
     fi
 fi
