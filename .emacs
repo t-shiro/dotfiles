@@ -1,7 +1,7 @@
 ;; 言語設定
-;;(require 'mozc)
+(require 'mozc)
 (set-language-environment "Japanese")
-;;(setq default-input-method "japanese-mozc")
+(setq default-input-method "japanese-mozc")
 (prefer-coding-system 'utf-8)
 
 ;; load-path
@@ -216,3 +216,4 @@
 ;; nnで「ん」を出す為の設定
 (setq quail-japanese-use-double-n t)
 
+(global-set-key "\C-d" 'goto-line)
