@@ -26,6 +26,7 @@ export LS_COLORS='rs=0:di=00;44:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 
 alias ls='ls --color'
 alias ll='ls -lah'
+alias killcaps='setxkbmap -option ctrl:nocaps'
 #プロンプト設定 %(,,)はif...then...else、?は直前の終了ステータス、!はユーザーの権限のチェック
 local p_info="[ %n@%m ]"
 local p_mark="%(?,%F{green},%F{red})%(!,#,$)%f"

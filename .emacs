@@ -215,5 +215,3 @@
 
 ;; nnで「ん」を出す為の設定
 (setq quail-japanese-use-double-n t)
-
-(global-set-key "\C-d" 'goto-line)
