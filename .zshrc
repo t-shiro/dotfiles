@@ -51,7 +51,7 @@ fi
 
 #export PROMPT=''
 RPROMPT="[%/ %T]"
-
+export PATH=/usr/lib/ccache/bin:${PATH}
 
 export EDITOR=emacs
 export LANG=ja_JP.UTF-8
