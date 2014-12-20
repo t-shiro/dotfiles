@@ -28,6 +28,14 @@ alias ls='ls --color'
 alias ll='ls -lah'
 alias killcaps='setxkbmap -option ctrl:nocaps'
 alias open='xdg-open'
+alias c++='c++ -rdynamic'
+alias cc='cc -rdynamic'
+alias g++='g++ -rdynamic -Wall -pedantic -ansi -Wshadow'
+alias gcc='gcc -rdynamic -Wall -pedantic -ansi -Wshadow'
+alias x86_64-pc-linux-gnu-c++='x86_64-pc-linux-gnu-c++ -rdynamic'
+alias x86_64-pc-linux-gnu-g++='x86_64-pc-linux-gnu-g++ -rdynamic'
+alias x86_64-pc-linux-gnu-gcc='x86_64-pc-linux-gnu-gcc -rdynamic'
+
 
 
 #プロンプト設定 %(,,)はif...then...else、?は直前の終了ステータス、!はユーザーの権限のチェック
