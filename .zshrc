@@ -35,7 +35,9 @@ alias gcc='gcc -rdynamic -Wall -pedantic -ansi -Wshadow'
 alias x86_64-pc-linux-gnu-c++='x86_64-pc-linux-gnu-c++ -rdynamic'
 alias x86_64-pc-linux-gnu-g++='x86_64-pc-linux-gnu-g++ -rdynamic'
 alias x86_64-pc-linux-gnu-gcc='x86_64-pc-linux-gnu-gcc -rdynamic'
-
+alias projector='xrandr --output LVDS1 --mode 1366x768 --output VGA1 --mode 1024x768 --right-of LVDS1'
+alias escale='xrandr --output LVDS1 --mode 1366x768 --scale 1.171x1.171 --fb 1600x900 --panning 1600x900'
+alias oscale='xrandr --output LVDS1 --mode 1366x768 --scale 1x1 --fb 1366x768 --panning 1366x768'
 
 
 #プロンプト設定 %(,,)はif...then...else、?は直前の終了ステータス、!はユーザーの権限のチェック
