@@ -119,17 +119,25 @@ zstyle ':completion:*:manuals' separate-sections true
 #     fi
 # fi
 
-# tmuxの中でSSHをしたら新しいタブを作成する
-if [  $TERM != screen ]; then
+
+function new_tmux() {
     if $(tmux has-session 2> /dev/null); then
         tmux attach
     else
-        if [ $SSH_CLIENT ]; then
-            tmux -f ~/.tmux.conf.server
-        else
+        if [ -z ${SSH_CLIENT} ]; then
             tmux -f ~/.tmux.conf.terminal
+        else
+            tmux -f ~/.tmux.conf.server
         fi
     fi
+}
+
+
+# tmuxの中でSSHをしたら新しいタブを作成する
+if [ $TERM != screen ]; then
+    new_tmux
+elif [ ${SSH_CLIENT} ]; then
+    new_tmux
 fi
 
 
