@@ -105,16 +105,39 @@ zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
 
 # $TMUXが定義されていないならアタッチするかセッションを開始
-if [ $(id -u) != 0 ]; then
-    if [ ! $TMUX ]; then
-        if $(tmux has-session 2> /dev/null); then
-            tmux attach
+# if [ $(id -u) != 0 ]; then
+#     if [ ! $TMUX ]; then
+#         if $(tmux has-session 2> /dev/null); then
+#             tmux attach
+#         else
+#             if [ $SSH_CLIENT ]; then
+#                 tmux -f ~/.tmux.conf.server
+#             else
+#                 tmux -f ~/.tmux.conf.terminal
+#             fi
+#         fi
+#     fi
+# fi
+
+# tmuxの中でSSHをしたら新しいタブを作成する
+if [  $TERM != screen ]; then
+    if $(tmux has-session 2> /dev/null); then
+        tmux attach
+    else
+        if [ $SSH_CLIENT ]; then
+            tmux -f ~/.tmux.conf.server
         else
-            if [ $SSH_CLIENT ]; then
-                tmux -f ~/.tmux.conf.server
-            else
-                tmux -f ~/.tmux.conf.terminal
-            fi
+            tmux -f ~/.tmux.conf.terminal
         fi
     fi
+fi
+
+
+# tmuxの中でSSHをしたら新しいタブを作成する
+if [  $TERM = screen ]; then
+    function ssh_tmux() {
+        eval server=\${$#}
+        tmux new-window -n $@ "exec ssh $@"
+    }
+    alias ssh=ssh_tmux
 fi

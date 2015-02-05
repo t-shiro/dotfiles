@@ -157,10 +157,10 @@
 (global-set-key "\C-m" 'newline-and-indent)
 
 ;; シンタックスチェックのflymake
-(require 'flymake)
+;; (require 'flymake)
 
 ;; 全てのファイルに対してflymakeする
-(add-hook 'find-file-hook 'flymake-find-file-hook)
+;; (add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; Ruby用の補完
 ;; (require 'ruby-electric)
