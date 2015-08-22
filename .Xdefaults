@@ -1,0 +1,29 @@
+! URxvt*font:	xft:VL Gothic:style=Regular:size=18:antialias=true
+! URxvt*boldFont:	xft:VL Gothic:style=Regular:size=18:antialias=true
+! URxvt*font:	xft:Source Han Sans JP Regular:style=Regular:size=18:antialias=true
+! URxvt*boldFont:	xft:Source Han Sans JP Bold:style=Bold:size=18:antialias=true
+URxvt*font:	xft:Ricty:style=Regular:size=22:antialias=true
+URxvt*boldFont:	xft:Ricty:style=Regular:size=22:antialias=true
+! URxvt*font:	xft:Source Han Sans JP:style=ExtraLight:size=22:antialias=true
+! URxvt*boldFont:	xft:Source Han Sans JP:style=ExtraLight:size=22:antialias=true
+! URxvt*font: xft:terminus:size=20:antialias=true
+! URxvt*boldFont: xft:terminus:size=20:antialias=true
+! URxvt*letterSpace: -5
+URxvt.transparent: true
+URxvt.inheritPixmap: true
+URxvt.shading: 45
+URxvt.foreground: snow
+URxvt.background: black
+URxvt.saveLines: 20000
+
+
+
+
+Emacs*userXIM: false
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb: rgb
