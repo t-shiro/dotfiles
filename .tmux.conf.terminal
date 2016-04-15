@@ -9,7 +9,7 @@ set -g status-right-length 150
 #set -g status-right "#(date +"%Y/%m/%d") #(date +"%H:%M:%S")"
 if "test 'Darwin' = `uname`" "set -g status-left '🍎 '"
 if "test 'Linux' = `uname`" "set -g status-left '🐧 '"
-set -g mode-mouse on
+# set -g mode-mouse on
 unbind-key C-b
 set -g prefix C-t
 bind-key C-t send-prefix
@@ -23,7 +23,7 @@ bind C-p copy-mode
 unbind -t emacs-copy M-w
 # OSXなら手元のクリップボードに放り投げる
 if "test 'Darwin' = `uname`" "bind -t emacs-copy M-w copy-pipe 'reattach-to-user-namespace pbcopy'"
-if "test 'Darwin' != `uname`" "bind -t emacs-copy M-w copy-selection"
+if "test 'Darwin' != `uname`" "bind -t emacs-copy M-w copy-pipe 'xsel --input --clipboard'"
 bind -t emacs-copy C-e end-of-line
 bind -t emacs-copy C-l copy-line # ターミナルの一行まるごとコピー
 bind -t emacs-copy C-k copy-end-of-line # カーソルより右をコピー
@@ -81,4 +81,6 @@ bind -r C-l resize-pane -R 5
 # エスケープ入力までの時間が遅いので変更
 set -s escape-time 0
 
-# set -g default-terminal "screen-256color"
+set -g default-terminal "screen-256color"
+bind S setw synchronize-panes on
+bind s setw synchronize-panes off
