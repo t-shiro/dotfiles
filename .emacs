@@ -7,7 +7,7 @@
 ;; load-path
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 (add-to-list 'load-path "~/.emacs.d/elpa/")
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/ess/")
+
 
 ;; Mac向けの言語設定
 (when (eq system-type 'darwin)
@@ -138,10 +138,6 @@
 (global-auto-complete-mode t)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
-;; R-mode
-(setq auto-mode-alist
-      (cons (cons "\\.r$" 'R-mode) auto-mode-alist))
-(autoload 'R-mode "ess-site" "Emacs Speaks Statistics mode" t)
 
 ;; 括弧の補完
 (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
