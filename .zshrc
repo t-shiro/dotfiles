@@ -42,7 +42,7 @@ alias escale='xrandr --fb 1920x1080 --output LVDS1 --scale 1.2x1.2 --mode 1600x9
 alias oscale='xrandr --fb 1600x900 --output LVDS1 --scale 1x1 --mode 1600x900  --panning 1600x900'
 alias off='xrandr --output VGA1 --off'
 alias grep='grep --color'
-
+alias ec='emacsclient -nw'
 
 #プロンプト設定 %(,,)はif...then...else、?は直前の終了ステータス、!はユーザーの権限のチェック
 local p_info="[ %n@%m ]"
