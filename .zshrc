@@ -32,8 +32,8 @@ alias killcaps='setxkbmap -option ctrl:nocaps'
 alias open='xdg-open'
 alias c++='c++ -rdynamic'
 alias cc='cc -rdynamic'
-alias g++='g++ -rdynamic -Wall -pedantic -ansi -Wshadow'
-alias gcc='gcc -rdynamic -Wall -pedantic -ansi -Wshadow'
+alias g++='g++ -rdynamic -Wall -pedantic -ansi -Wshadow -O2 -std=c++11'
+alias gcc='gcc -rdynamic -Wall -pedantic -ansi -Wshadow -O2'
 alias x86_64-pc-linux-gnu-c++='x86_64-pc-linux-gnu-c++ -rdynamic'
 alias x86_64-pc-linux-gnu-g++='x86_64-pc-linux-gnu-g++ -rdynamic'
 alias x86_64-pc-linux-gnu-gcc='x86_64-pc-linux-gnu-gcc -rdynamic'
@@ -43,6 +43,9 @@ alias oscale='xrandr --fb 1600x900 --output LVDS1 --scale 1x1 --mode 1600x900  -
 alias off='xrandr --output VGA1 --off'
 alias grep='grep --color'
 alias ec='emacsclient -nw'
+alias clang++='clang++ -O2 -std=c++11'
+alias clang='clang -O2'
+
 
 #プロンプト設定 %(,,)はif...then...else、?は直前の終了ステータス、!はユーザーの権限のチェック
 local p_info="[ %n@%m ]"
