@@ -126,15 +126,3 @@ if [ $(id -u) != 0 ]; then
 fi
 
 
-function new_tmux() {
-    if $(tmux has-session 2> /dev/null); then
-        tmux attach
-    else
-        if [ -z ${SSH_CLIENT} ]; then
-            tmux -f ~/.tmux.conf.terminal
-        else
-            tmux -f ~/.tmux.conf.server
-        fi
-    fi
-}
-
