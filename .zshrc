@@ -45,6 +45,9 @@ alias grep='grep --color'
 alias ec='emacsclient -nw'
 alias clang++='clang++ -O2 -std=c++11'
 alias clang='clang -O2'
+alias icpc='icpc -O2 -std=c++11 -ipo'
+alias icc='icc -O2'
+alias clipboard='xsel --input --clipboard'
 
 
 #プロンプト設定 %(,,)はif...then...else、?は直前の終了ステータス、!はユーザーの権限のチェック
@@ -70,7 +73,7 @@ fi
 
 #export PROMPT=''
 RPROMPT="[%/ %T]"
-export PATH=/usr/lib/ccache/bin:${PATH}:~/local/bin
+export PATH=/opt/intel/2017_u1/bin:/usr/lib/ccache/bin:${PATH}:~/local/bin:/sbin
 export _JAVA_AWT_WM_NONREPARENTING=0
 export EDITOR=emacs
 export LANG=ja_JP.UTF-8
