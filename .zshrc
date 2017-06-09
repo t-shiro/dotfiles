@@ -49,6 +49,8 @@ alias icpc='icpc -O2 -std=c++11 -ipo'
 alias icc='icc -O2'
 alias clipboard='xsel --input --clipboard'
 alias gppcv='g++ `pkg-config --cflags opencv` `pkg-config --libs opencv`'
+alias darker='sudo /usr/local/bin/darker.sh'
+alias brighter='sudo /usr/local/bin/brighter.sh'
 
 
 #プロンプト設定 %(,,)はif...then...else、?は直前の終了ステータス、!はユーザーの権限のチェック
@@ -130,3 +132,5 @@ if [ $(id -u) != 0 ]; then
 fi
 
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
