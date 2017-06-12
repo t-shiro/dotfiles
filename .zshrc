@@ -76,7 +76,7 @@ fi
 
 #export PROMPT=''
 RPROMPT="[%/ %T]"
-export PATH=/opt/intel/2017_u1/bin:/usr/lib/ccache/bin:${PATH}:~/local/bin:/sbin
+export PATH=/opt/intel/2017_u1/bin:/opt/intel/bin:/usr/lib/ccache/bin:${PATH}:~/local/bin:/sbin
 export _JAVA_AWT_WM_NONREPARENTING=0
 export EDITOR=emacs
 export LANG=ja_JP.UTF-8
