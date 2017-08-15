@@ -1,5 +1,7 @@
 set-option -g history-limit 10000
 
+set-option -g repeat-time 500
+
 # status
 if "test 'Darwin' = `uname`" "set -g status-fg cyan"
 if "test 'Darwin' = `uname`" "set -g status-bg green"
@@ -7,8 +9,8 @@ if "test 'Darwin' = `uname`" "set -g status-bg green"
 set -g status-interval 5
 set -g status-right-length 150
 #set -g status-right "#(date +"%Y/%m/%d") #(date +"%H:%M:%S")"
-if "test 'Darwin' = `uname`" "set -g status-left '🍎 '"
-if "test 'Linux' = `uname`" "set -g status-left '🐧 '"
+# if "test 'Darwin' = `uname`" "set -g status-left '🍎 '"
+# if "test 'Linux' = `uname`" "set -g status-left '🐧 '"
 # set -g mode-mouse on
 unbind-key C-b
 set -g prefix C-t
@@ -19,17 +21,27 @@ set-window-option -g mode-keys emacs
 
 # copy-mode
 # Prefix+Emacsっぽいコピー開始/貼り付け。選択終了はEnter
-bind C-p copy-mode
-unbind -t emacs-copy M-w
-# OSXなら手元のクリップボードに放り投げる
-if "test 'Darwin' = `uname`" "bind -t emacs-copy M-w copy-pipe 'reattach-to-user-namespace pbcopy'"
-if "test 'Darwin' != `uname`" "bind -t emacs-copy M-w copy-pipe 'xsel --input --clipboard'"
-bind -t emacs-copy C-e end-of-line
-bind -t emacs-copy C-l copy-line # ターミナルの一行まるごとコピー
-bind -t emacs-copy C-k copy-end-of-line # カーソルより右をコピー
-bind -t emacs-copy M-Right jump-forward
+# unbind-key copy-mode M-w
+bind-key -T prefix C-p copy-mode
+# unbind-key -T copy-mode C-p
+# bind-key -T copy-mode C-p send-keys -X send-keys -X history-up
+# bind-key -T copy-mode C-p
+# unbind-key -T copy-mode C-Space
+# bind-key -T copy-mode C-Space send-keys -X send-keys -X begin-selection
 
-bind C-y paste-buffer
+
+bind-key -T copy-mode M-w send-keys -X copy-selection-and-cancel
+# # OSXなら手元のクリップボードに放り投げる
+# if "test 'Darwin' = `uname`" "bind -T copy-mode send -X M-w copy-pipe 'reattach-to-user-namespace pbcopy'"
+# if "test 'Darwin' != `uname`" "bind -t emacs-copy M-w copy-pipe 'xsel --input --clipboard'"
+bind-key -T copy-mode C-e send-keys -X end-of-line
+bind-key -T copy-mode C-l send-keys -X copy-line # ターミナルの一行まるごとコピー
+bind-key -T copy-mode C-k send-keys -X copy-end-of-line # カーソルより右をコピー
+bind-key -T copy-mode M-Right send-keys -X jump-forward
+# bind-key -C-y paste-buffer
+unbind-key C-y
+bind-key C-y paste-buffer
+
 
 #window-status-current
 setw -g window-status-current-fg black
