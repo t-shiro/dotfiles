@@ -14,15 +14,10 @@ if [ `uname` = "Darwin" ]; then
     export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/share/man:/usr/local/opt/coreutils/share/man:${MANPATH}"
 
-    #brewからの指示により、オンラインヘルプを使うため
-    unalias run-help
-    autoload run-help
-    HELPDIR=/usr/local/share/zsh/helpfiles
-    export INCLUDE="/usr/local/Cellar/libelf/0.8.13/include/libelf:~/include"
 
 elif [ `uname` = "Linux"  ]; then
     # Linux specific
-    xset r rate 225 50
+    # xset r rate 225 50
     alias killcaps='setxkbmap -option ctrl:nocaps'
     alias projector='xrandr --output LVDS1 --mode 1600x900 --output VGA1 --mode 1024x768 --right-of LVDS1'
     alias escale='xrandr --fb 1920x1080 --output LVDS1 --scale 1.2x1.2 --mode 1600x900 --panning 1920x1080'
