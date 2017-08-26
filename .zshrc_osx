@@ -1,14 +1,20 @@
+
+
 alias sed='gsed'
 alias awk='gawk'
 alias grep='ggrep'
 alias find='gfind'
 alias xargs='gxargs'
+alias vmrun='/Applications/VMware\ Fusion.app/Contents/Library/vmrun start Documents/Virtual\ Machines.localized/Ubuntu\ Server.vmwarevm/Ubuntu\ Server.vmx nogui'
 
-export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/share/man:/usr/local/opt/coreutils/share/man:${MANPATH}"
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
+defaults write NSGlobalDomain KeyRepeat -int 1
 
-#brewからの指示により、オンラインヘルプを使うため
-unalias run-help
-autoload run-help
-HELPDIR=/usr/local/share/zsh/helpfiles
-export INCLUDE="/usr/local/Cellar/libelf/0.8.13/include/libelf:~/include"
+# disable animation
+defaults write com.apple.dock expose-animation-duration -int 0
+# enable animation
+defaults delete com.apple.dock expose-animation-duration
+
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
