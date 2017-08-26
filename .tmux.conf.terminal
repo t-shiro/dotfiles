@@ -32,7 +32,7 @@ bind-key -T prefix C-p copy-mode
 
 bind-key -T copy-mode M-w send-keys -X copy-selection-and-cancel
 # # OSXなら手元のクリップボードに放り投げる
-if "test 'Darwin' = `uname`" "bind -T copy-mode M-w send-keys -X copy-pipe 'reattach-to-user-namespace pbcopy'"
+if "test 'Darwin' = `uname`" "bind -T copy-mode M-w send-keys -X copy-pipe-and-cancel 'reattach-to-user-namespace pbcopy'"
 if "test 'Darwin' != `uname`" "bind -T copy-mode M-w send-keys -X copy-pipe-and-cancel 'xsel --input --clipboard'"
 bind-key -T copy-mode C-e send-keys -X end-of-line
 bind-key -T copy-mode C-l send-keys -X copy-line # ターミナルの一行まるごとコピー
@@ -103,3 +103,5 @@ set -g terminal-overrides 'xterm:colors=256'
 
 setw -g window-status-current-fg black
 setw -g window-status-current-bg cyan
+
+set -g status-bg "colour238"
