@@ -1,6 +1,6 @@
 set-option -g history-limit 10000
 
-set-option -g repeat-time 500
+set-option -g repeat-time 300
 
 # status
 if "test 'Darwin' = `uname`" "set -g status-fg cyan"
@@ -32,8 +32,8 @@ bind-key -T prefix C-p copy-mode
 
 bind-key -T copy-mode M-w send-keys -X copy-selection-and-cancel
 # # OSXなら手元のクリップボードに放り投げる
-# if "test 'Darwin' = `uname`" "bind -T copy-mode send -X M-w copy-pipe 'reattach-to-user-namespace pbcopy'"
-# if "test 'Darwin' != `uname`" "bind -t emacs-copy M-w copy-pipe 'xsel --input --clipboard'"
+if "test 'Darwin' = `uname`" "bind -T copy-mode M-w send-keys -X copy-pipe 'reattach-to-user-namespace pbcopy'"
+if "test 'Darwin' != `uname`" "bind -T copy-mode M-w send-keys -X copy-pipe-and-cancel 'xsel --input --clipboard'"
 bind-key -T copy-mode C-e send-keys -X end-of-line
 bind-key -T copy-mode C-l send-keys -X copy-line # ターミナルの一行まるごとコピー
 bind-key -T copy-mode C-k send-keys -X copy-end-of-line # カーソルより右をコピー
@@ -43,18 +43,16 @@ unbind-key C-y
 bind-key C-y paste-buffer
 
 
-#window-status-current
-setw -g window-status-current-fg black
-setw -g window-status-current-bg cyan
+# window-status-current
 
-setw -g window-status-current-attr bold#,underscore
+# setw -g window-status-current-attr bold#,underscore
 
 # サイズが異なる端末からの接続で随時ウインドウサイズを変更
 set-window-option -g aggressive-resize on
 
 #pane-active-border
-set -g pane-active-border-fg black
-set -g pane-active-border-bg cyan
+# set -g pane-active-border-fg black
+# set -g pane-active-border-bg cyan
 
 # reload [prefix] r
 unbind r
@@ -93,6 +91,15 @@ bind -r C-l resize-pane -R 5
 # エスケープ入力までの時間が遅いので変更
 set -s escape-time 0
 
-set -g default-terminal "screen-256color"
 bind S setw synchronize-panes on
 bind s setw synchronize-panes off
+
+set -g window-status-separator '|'
+
+set-option -g default-terminal screen-256color
+set -g terminal-overrides 'xterm:colors=256'
+# run-shell "powerline-daemon -q"
+# source "/home/romanov/.local/lib64/python3.4/site-packages/powerline/bindings/tmux/powerline.conf"
+
+setw -g window-status-current-fg black
+setw -g window-status-current-bg cyan

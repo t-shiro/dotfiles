@@ -17,7 +17,6 @@ if [ `uname` = "Darwin" ]; then
 
 elif [ `uname` = "Linux"  ]; then
     # Linux specific
-    # xset r rate 225 50
     alias killcaps='setxkbmap -option ctrl:nocaps'
     alias projector='xrandr --output LVDS1 --mode 1600x900 --output VGA1 --mode 1024x768 --right-of LVDS1'
     alias escale='xrandr --fb 1920x1080 --output LVDS1 --scale 1.2x1.2 --mode 1600x900 --panning 1920x1080'
@@ -122,9 +121,9 @@ if [ $(id -u) != 0 ]; then
             tmux attach
         else
             if [ $SSH_CLIENT ]; then
-                tmux -f ~/.tmux.conf.server
+                tmux -f ~/.tmux.conf.server -2
             else
-                tmux -f ~/.tmux.conf.terminal
+                tmux -f ~/.tmux.conf.terminal -2
             fi
         fi
     fi
