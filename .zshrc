@@ -18,15 +18,7 @@ if [ `uname` = "Darwin" ]; then
 elif [ `uname` = "Linux"  ]; then
     # Linux specific
     alias killcaps='setxkbmap -option ctrl:nocaps'
-    alias projector='xrandr --output LVDS1 --mode 1600x900 --output VGA1 --mode 1024x768 --right-of LVDS1'
-    alias escale='xrandr --fb 1920x1080 --output LVDS1 --scale 1.2x1.2 --mode 1600x900 --panning 1920x1080'
-    alias oscale='xrandr --fb 1600x900 --output LVDS1 --scale 1x1 --mode 1600x900  --panning 1600x900'
-    alias off='xrandr --output VGA1 --off'
-    alias darker='sudo /usr/local/bin/darker.sh'
-    alias brighter='sudo /usr/local/bin/brighter.sh'
-    export _JAVA_AWT_WM_NONREPARENTING=0
     alias clipboard='xsel --input --clipboard'
-    export PATH=/opt/intel/2017_u1/bin:/opt/intel/bin:/usr/lib/ccache/bin:${PATH}:~/local/bin:/sbin
 fi
 
 # export COLORTERM='rxvt'
@@ -42,17 +34,7 @@ alias cc='cc -rdynamic'
 alias grep='grep --color'
 
 
-alias g++='g++ -rdynamic -Wall -pedantic -ansi -Wshadow -O3 -std=c++14'
-alias gcc='gcc -rdynamic -Wall -pedantic -ansi -Wshadow -O2'
-alias x86_64-pc-linux-gnu-c++='x86_64-pc-linux-gnu-c++ -rdynamic'
-alias x86_64-pc-linux-gnu-g++='x86_64-pc-linux-gnu-g++ -rdynamic'
-alias x86_64-pc-linux-gnu-gcc='x86_64-pc-linux-gnu-gcc -rdynamic'
 alias ec='emacsclient -nw'
-alias clang++='clang++ -O2 -std=c++11'
-alias clang='clang -O2'
-alias icpc='icpc -O2 -std=c++11 -ipo'
-alias icc='icc -O2'
-alias gppcv='g++ `pkg-config --cflags opencv` `pkg-config --libs opencv`'
 
 
 #プロンプト設定 %(,,)はif...then...else、?は直前の終了ステータス、!はユーザーの権限のチェック
