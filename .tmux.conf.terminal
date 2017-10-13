@@ -54,8 +54,8 @@ bind-key C-y paste-buffer
 set-window-option -g aggressive-resize on
 
 #pane-active-border
-set -g pane-active-border-fg cyan
-set -g pane-active-border-bg cyan
+# set -g pane-active-border-fg cyan
+# set -g pane-active-border-bg cyan
 
 # reload [prefix] r
 unbind r
