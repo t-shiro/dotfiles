@@ -11,7 +11,7 @@ if [ `uname` = "Darwin" ]; then
     alias xargs='gxargs'
 
 
-    export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export PATH="/usr/local/opt/grep/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/share/man:/usr/local/opt/coreutils/share/man:${MANPATH}"
 
 

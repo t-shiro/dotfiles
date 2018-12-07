@@ -15,8 +15,8 @@ set -g status-right-length 150
 # if "test 'Linux' = `uname`" "set -g status-left '🐧 '"
 # set -g mode-mouse on
 unbind-key C-b
-set -g prefix C-t
-bind-key C-t send-prefix
+set -g prefix C-q
+bind-key C-q send-prefix
 
 # 設定をEmacsライクに
 set-window-option -g mode-keys emacs
