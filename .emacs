@@ -1,7 +1,7 @@
 ;; 言語設定
 ; (require 'mozc)
 (set-language-environment "Japanese")
-(setq default-input-method "japanese-mozc")
+; (setq default-input-method "japanese-mozc")
 (prefer-coding-system 'utf-8)
 
 (require 'tramp)
@@ -32,7 +32,7 @@
 
 ;; package.elの拡張
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+; (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
@@ -137,9 +137,9 @@
 
 
 ;; auto-complete
-(require 'auto-complete)
-(global-auto-complete-mode t)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+;(require 'auto-complete)
+;(global-auto-complete-mode t)
+;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
 
 ;; 括弧の補完
@@ -168,12 +168,12 @@
 ;;              (ruby-electric-mode t)))
 ;; (setq ruby-electric-expand-delimiters-list nil)
 
-(require 'ruby-block)
-(ruby-block-mode t)
-(setq ruby-block-highlight-toggle t)
+;(require 'ruby-block)
+;(ruby-block-mode t)
+;(setq ruby-block-highlight-toggle t)
 
-(require 'twittering-mode)
-(setq twittering-use-master-password t)
+;(require 'twittering-mode)
+;(setq twittering-use-master-password t)
 
 
 (custom-set-variables
