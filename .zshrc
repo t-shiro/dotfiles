@@ -97,7 +97,7 @@ zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
 
 # $TMUXが定義されていないならアタッチするかセッションを開始
-if [ $(id -u) != 0 ]; then
+if [ $(id -u) != 0 ] && [ "$VSCODE_PID" = "" ] && [ "$TERM_PROGRAM" != "vscode" ]; then
     if [ ! $TMUX ]; then
         if $(tmux has-session 2> /dev/null); then
             tmux attach
